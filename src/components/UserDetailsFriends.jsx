@@ -2,7 +2,10 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
+//import styles
 import GridContainer from "../style/GridContainer";
+
+//import components
 import User from "./User";
 
 export default function UserDetailsFriends({ userId }) {
@@ -48,7 +51,18 @@ export default function UserDetailsFriends({ userId }) {
   }, [handleScroll]);
 
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
+      <h1
+        style={{ marginLeft: "10px", marginTop: "20px", marginBottom: "20px" }}
+      >
+        Friends
+      </h1>
       <GridContainer>
         {friends.map((friend) => (
           <Link to={`/user/${friend.id}`} key={`${friend.name}-${friend.id}`}>

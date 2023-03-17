@@ -1,4 +1,6 @@
 import { useParams } from "react-router-dom";
+
+//import components
 import UserDetailsFriends from "../components/UserDetailsFriends";
 import UserDetailsHeader from "../components/UserDetailsHeader";
 import UserHistory from "../components/UserHistory";
@@ -13,6 +15,7 @@ function UserDatails() {
         justifyContent: "center",
         margin: "auto",
         border: "1px solid black",
+        width: "1200px",
       }}
     >
       <div>

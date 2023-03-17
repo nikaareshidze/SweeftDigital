@@ -5,7 +5,7 @@ export default function UserHistory() {
   const { history } = useSelector((state) => state.historySlice);
 
   return (
-    <div style={{ display: "flex", flexWrap: "wrap" }}>
+    <div style={{ display: "flex", flexWrap: "wrap", padding: "10px" }}>
       {history.map((i) => (
         // key is needed
         <Link to={i.url}>

@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-
-//import styles
-import Fieldset from "../style/Fieldset";
-import Title from "../style/Title";
-import Desc from "../style/Desc";
-
 import { useDispatch } from "react-redux";
 import { historyActions } from "../store/historySlice";
+
+//import components
+import LeftFieldset from "./header/LeftFieldset";
+import RightFieldset from "./header/RightFieldset";
+
+//import styles
+import HeaderContainer from "../style/HeaderContainer";
 
 export default function UserDetailsHeader({ userId }) {
   const [userData, setUserData] = useState({});
@@ -40,64 +41,10 @@ export default function UserDetailsHeader({ userId }) {
   }, [userId]);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        padding: "20px",
-        alignItems: "center",
-      }}
-    >
+    <HeaderContainer>
       <img src={`${userData.imageUrl}?v=${userId}`} width="267" height="200" />
-
-      <Fieldset style={{ width: "630px", marginLeft: "20px" }}>
-        <legend>Info</legend>
-        <div>
-          <Title>{`${userData.prefix} ${userData.name} ${userData.lastName}`}</Title>
-        </div>
-        <div>
-          <Desc>{userData.title}</Desc>
-        </div>
-        <br />
-        <div>
-          <span>Email</span>: {userData.email}
-        </div>
-        <div>
-          <span>Ip Address</span>: {userData.ip}
-        </div>
-        <div>
-          <span>Ip Address</span>: {userData.ip}
-        </div>
-        <div>
-          <span>Job Area</span>: {userData.jobArea}
-        </div>
-        <div>
-          <span>Job Type</span>: {userData.jobType}
-        </div>
-      </Fieldset>
-
-      <Fieldset style={{ margin: "2px", padding: "12px" }}>
-        <legend>Address</legend>
-        <div>
-          <Title>{`${company.name}${company.suffix}`}</Title>
-        </div>
-
-        <div>
-          <span>City</span>: {address.city}
-        </div>
-        <div>
-          <span>Country</span>: {address.country}
-        </div>
-        <div>
-          <span>State</span>: {address.state}
-        </div>
-        <div>
-          <span>Street Address</span>: {address.streetAddress}
-        </div>
-        <div>
-          <span>Zip</span>: {address.zipCode}
-        </div>
-      </Fieldset>
-    </div>
+      <LeftFieldset userData={userData} />
+      <RightFieldset company={company} address={address} />
+    </HeaderContainer>
   );
 }
