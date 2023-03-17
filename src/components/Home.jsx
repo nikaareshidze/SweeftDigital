@@ -44,9 +44,9 @@ function Home() {
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <GridContainer>
-        {users.map((i) => (
-          <Link to={`/user/${i.id}`} key={i.id}>
-            <User user={i} />
+        {users.map((user) => (
+          <Link to={`/user/${user.id}`} key={user.id}>
+            <User user={user} />
           </Link>
         ))}
       </GridContainer>

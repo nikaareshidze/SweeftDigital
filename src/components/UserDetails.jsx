@@ -1,11 +1,23 @@
-import React from "react";
 import { useParams } from "react-router-dom";
+import UserDetailsFriends from "./UserDetailsFriends";
+import UserDetailsHeader from "./UserDetailsHeader";
 
 function UserDatails() {
   const { userId } = useParams();
+
   return (
-    <div>
-      <h1>Hello Sweeft {userId}</h1>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        margin: "auto",
+        border: "1px solid black",
+      }}
+    >
+      <div>
+        <UserDetailsHeader userId={userId} />
+        <UserDetailsFriends userId={userId} />
+      </div>
     </div>
   );
 }

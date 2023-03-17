@@ -5,7 +5,7 @@ import UserContainer from "../style/UserContainer";
 export default function User({ user }) {
   return (
     <UserContainer>
-      <img src={`${user.imageUrl}`} height="208.5" width="278" />
+      <img src={`${user.imageUrl}?v=${user.id}`} height="208.5" width="278" />
       <Title>{`${user.prefix} ${user.name} ${user.lastName}`}</Title>
       <Desc>{user.title}</Desc>
     </UserContainer>
