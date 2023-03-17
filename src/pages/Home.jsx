@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 //components
-import User from "./User";
+import User from "../components/User";
 
 //styles
 import GridContainer from "../style/GridContainer";

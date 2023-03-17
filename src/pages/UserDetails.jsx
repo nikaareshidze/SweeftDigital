@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
-import UserDetailsFriends from "./UserDetailsFriends";
-import UserDetailsHeader from "./UserDetailsHeader";
-import UserHistory from "./UserHistory";
+import UserDetailsFriends from "../components/UserDetailsFriends";
+import UserDetailsHeader from "../components/UserDetailsHeader";
+import UserHistory from "../components/UserHistory";
 
 function UserDatails() {
   const { userId } = useParams();
