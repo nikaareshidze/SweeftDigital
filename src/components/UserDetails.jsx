@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import UserDetailsFriends from "./UserDetailsFriends";
 import UserDetailsHeader from "./UserDetailsHeader";
+import UserHistory from "./UserHistory";
 
 function UserDatails() {
   const { userId } = useParams();
@@ -16,6 +17,7 @@ function UserDatails() {
     >
       <div>
         <UserDetailsHeader userId={userId} />
+        <UserHistory />
         <UserDetailsFriends userId={userId} />
       </div>
     </div>

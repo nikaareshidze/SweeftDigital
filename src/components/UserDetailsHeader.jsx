@@ -6,10 +6,18 @@ import Fieldset from "../style/Fieldset";
 import Title from "../style/Title";
 import Desc from "../style/Desc";
 
+import { useDispatch } from "react-redux";
+import { historyActions } from "../store/historySlice";
+
 export default function UserDetailsHeader({ userId }) {
   const [userData, setUserData] = useState({});
   const [company, setCompany] = useState({});
   const [address, setAddress] = useState({});
+
+  const dispatch = useDispatch();
+  const setHistory = (payload) => {
+    dispatch(historyActions.setHistory(payload));
+  };
 
   useEffect(() => {
     axios
@@ -20,6 +28,11 @@ export default function UserDetailsHeader({ userId }) {
         setUserData(response.data);
         setCompany(response.data.company);
         setAddress(response.data.address);
+        setHistory({
+          name: `${response.data.prefix} ${response.data.name} ${response.data.lastName}`,
+          url: `/user/${userId}`,
+          id: response.data.id,
+        });
       })
       .catch((error) => {
         console.log(error);
