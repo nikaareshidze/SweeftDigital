@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+// styles
 import Fieldset from "../../style/Fieldset";
 import Title from "../../style/Title";
 import Span from "../../style/Span";

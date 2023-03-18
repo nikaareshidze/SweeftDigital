@@ -5,6 +5,7 @@ import GridContainer from "../../../style/GridContainer";
 
 //import components
 import User from "../../User";
+import UserDetailsFriendsContainer from "../../../style/UserDetailsFriendsContainer";
 
 //hook
 import useUserDetailsFriends from "./useUserDetailsFriends";
@@ -13,14 +14,8 @@ export default function UserDetailsFriends({ userId }) {
   const { friends, addUserToHistory } = useUserDetailsFriends(userId);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-      }}
-    >
-      <h1 style={{ marginTop: "10px", marginBottom: "10px" }}>Friends</h1>
+    <UserDetailsFriendsContainer>
+      <h1 style={{ marginTop: "10px", marginBottom: "10px" }}>Friends:</h1>
       <GridContainer style={{ marginTop: "10px" }}>
         {friends.map((friend) => (
           <Link
@@ -34,6 +29,6 @@ export default function UserDetailsFriends({ userId }) {
           </Link>
         ))}
       </GridContainer>
-    </div>
+    </UserDetailsFriendsContainer>
   );
 }

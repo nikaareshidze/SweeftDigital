@@ -1,18 +1,14 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
+//styles
+import UserHistoryContainer from "../../../style/UserHistoryContainer";
+
 export default function UserHistory() {
   const { history } = useSelector((state) => state.historySlice);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        marginTop: "20px",
-        marginBottom: "10px",
-      }}
-    >
+    <UserHistoryContainer>
       {history.map((item, i) => (
         <Link to={item.url} key={`${item.name}-${i}`}>
           <span style={{ textDecoration: "underline", color: "indigo" }}>
@@ -25,6 +21,6 @@ export default function UserHistory() {
           )}
         </Link>
       ))}
-    </div>
+    </UserHistoryContainer>
   );
 }
