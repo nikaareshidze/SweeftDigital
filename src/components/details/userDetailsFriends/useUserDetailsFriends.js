@@ -1,17 +1,9 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
-import { Link } from "react-router-dom";
-
 import { useDispatch } from "react-redux";
-import { historyActions } from "../store/historySlice";
+import { useEffect, useState } from "react";
+import { historyActions } from "../../../store/historySlice";
+import axios from "axios";
 
-//import styles
-import GridContainer from "../style/GridContainer";
-
-//import components
-import User from "./User";
-
-export default function UserDetailsFriends({ userId }) {
+export default function useUserDetailsFriends(userId) {
   const [friends, setFriends] = useState([]);
   const [page, setPage] = useState(1);
 
@@ -62,29 +54,5 @@ export default function UserDetailsFriends({ userId }) {
       url: `/user/${friend.id}`,
     });
   };
-
-  return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-      }}
-    >
-      <h1 style={{ marginTop: "10px", marginBottom: "10px" }}>Friends</h1>
-      <GridContainer style={{ marginTop: "10px" }}>
-        {friends.map((friend) => (
-          <Link
-            to={`/user/${friend.id}`}
-            key={`${friend.name}-${friend.id}`}
-            onClick={() => {
-              addUserToHistory(friend);
-            }}
-          >
-            <User user={friend} />
-          </Link>
-        ))}
-      </GridContainer>
-    </div>
-  );
+  return { friends, addUserToHistory };
 }

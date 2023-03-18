@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
 
 //import components
-import UserDetailsFriends from "../components/UserDetailsFriends";
-import UserDetailsHeader from "../components/UserDetailsHeader";
-import UserHistory from "../components/UserHistory";
+import UserDetailsFriends from "../../components//details/userDetailsFriends/UserDetailsFriends";
+import UserDetailsHeader from "../../components/details/userDetailsHeader/UserDetailsHeader";
+import UserHistory from "../../components/details/userHistory/UserHistory";
 
 //import styles
-import Container from "../style/Container";
+import Container from "../../style/Container";
 
 function UserDetails() {
   const { userId } = useParams();
