@@ -1,9 +1,11 @@
+import styled from "styled-components";
+
 import Fieldset from "../../style/Fieldset";
 import Title from "../../style/Title";
 
 export default function RightFieldset({ company, address }) {
   return (
-    <Fieldset style={{ margin: "2px", padding: "12px" }}>
+    <ThisFieldset>
       <legend>Address</legend>
       <div>
         <Title>{`${company.name}${company.suffix}`}</Title>
@@ -24,6 +26,18 @@ export default function RightFieldset({ company, address }) {
       <div>
         <span>Zip</span>: {address.zipCode}
       </div>
-    </Fieldset>
+    </ThisFieldset>
   );
 }
+
+const ThisFieldset = styled(Fieldset)`
+  width: 100%;
+  padding: 12px;
+
+  @media (max-width: 768px) {
+    grid-column: 1/3;
+  }
+  @media (max-width: 567px) {
+    grid-column: auto;
+  }
+`;

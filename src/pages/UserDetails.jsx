@@ -5,25 +5,20 @@ import UserDetailsFriends from "../components/UserDetailsFriends";
 import UserDetailsHeader from "../components/UserDetailsHeader";
 import UserHistory from "../components/UserHistory";
 
+//import styles
+import Container from "../style/Container";
+
 function UserDatails() {
   const { userId } = useParams();
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        margin: "auto",
-        border: "1px solid black",
-        width: "1200px",
-      }}
-    >
-      <div>
+    <Container>
+      <div style={{ width: "100%" }}>
         <UserDetailsHeader userId={userId} />
         <UserHistory />
         <UserDetailsFriends userId={userId} />
       </div>
-    </div>
+    </Container>
   );
 }
 

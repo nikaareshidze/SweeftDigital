@@ -7,6 +7,7 @@ import User from "../components/User";
 
 //styles
 import GridContainer from "../style/GridContainer";
+import Container from "../style/Container";
 
 function Home() {
   const [users, setUsers] = useState([]);
@@ -42,7 +43,7 @@ function Home() {
   };
 
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
+    <Container>
       <GridContainer>
         {users.map((user) => (
           <Link to={`/user/${user.id}`} key={user.id}>
@@ -50,7 +51,7 @@ function Home() {
           </Link>
         ))}
       </GridContainer>
-    </div>
+    </Container>
   );
 }
 

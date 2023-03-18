@@ -4,7 +4,7 @@ import Desc from "../../style/Desc";
 
 export default function LeftFieldset({ userData }) {
   return (
-    <Fieldset style={{ width: "630px", marginLeft: "20px" }}>
+    <Fieldset style={{ width: "100%" }}>
       <legend>Info</legend>
       <div>
         <Title>{`${userData.prefix} ${userData.name} ${userData.lastName}`}</Title>

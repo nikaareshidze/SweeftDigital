@@ -5,14 +5,23 @@ export default function UserHistory() {
   const { history } = useSelector((state) => state.historySlice);
 
   return (
-    <div style={{ display: "flex", flexWrap: "wrap", padding: "10px" }}>
-      {history.map((i) => (
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        marginTop: "20px",
+        marginBottom: "10px",
+      }}
+    >
+      {history.map((item, i) => (
         // key is needed
-        <Link to={i.url}>
-          <p style={{ textDecoration: "underline" }}>
-            {i.name}
-            <span>{` > `}</span>
-          </p>
+        <Link to={item.url}>
+          <span style={{ textDecoration: "underline" }}>{item.name}</span>
+          {i !== history.length - 1 ? (
+            <span style={{ padding: "5px" }}>{`>`}</span>
+          ) : (
+            ""
+          )}
         </Link>
       ))}
     </div>

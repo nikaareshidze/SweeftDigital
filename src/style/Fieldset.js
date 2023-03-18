@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Fieldset = styled.fieldset`
-  border: 2px solid black;
+  border: 1px solid #ccc;
   padding: 10px;
 `;
 
