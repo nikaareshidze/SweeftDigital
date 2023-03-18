@@ -1,6 +1,7 @@
 import Fieldset from "../../style/Fieldset";
 import Title from "../../style/Title";
 import Desc from "../../style/Desc";
+import Span from "../../style/Span";
 
 export default function LeftFieldset({ userData }) {
   return (
@@ -14,19 +15,19 @@ export default function LeftFieldset({ userData }) {
       </div>
       <br />
       <div>
-        <span>Email</span>: {userData.email}
+        <Span>Email</Span>: {userData.email}
       </div>
       <div>
-        <span>Ip Address</span>: {userData.ip}
+        <Span>Ip Address</Span>: {userData.ip}
       </div>
       <div>
-        <span>Ip Address</span>: {userData.ip}
+        <Span>Ip Address</Span>: {userData.ip}
       </div>
       <div>
-        <span>Job Area</span>: {userData.jobArea}
+        <Span>Job Area</Span>: {userData.jobArea}
       </div>
       <div>
-        <span>Job Type</span>: {userData.jobType}
+        <Span>Job Type</Span>: {userData.jobType}
       </div>
     </Fieldset>
   );

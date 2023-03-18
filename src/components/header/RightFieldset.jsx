@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import Fieldset from "../../style/Fieldset";
 import Title from "../../style/Title";
+import Span from "../../style/Span";
 
 export default function RightFieldset({ company, address }) {
   return (
@@ -12,19 +13,19 @@ export default function RightFieldset({ company, address }) {
       </div>
 
       <div>
-        <span>City</span>: {address.city}
+        <Span>City</Span>: {address.city}
       </div>
       <div>
-        <span>Country</span>: {address.country}
+        <Span>Country</Span>: {address.country}
       </div>
       <div>
-        <span>State</span>: {address.state}
+        <Span>State</Span>: {address.state}
       </div>
       <div>
-        <span>Street Address</span>: {address.streetAddress}
+        <Span>Street Address</Span>: {address.streetAddress}
       </div>
       <div>
-        <span>Zip</span>: {address.zipCode}
+        <Span>Zip</Span>: {address.zipCode}
       </div>
     </ThisFieldset>
   );

@@ -14,9 +14,10 @@ export default function UserHistory() {
       }}
     >
       {history.map((item, i) => (
-        // key is needed
-        <Link to={item.url}>
-          <span style={{ textDecoration: "underline" }}>{item.name}</span>
+        <Link to={item.url} key={`${item.name}-${i}`}>
+          <span style={{ textDecoration: "underline", color: "indigo" }}>
+            {item.name}
+          </span>
           {i !== history.length - 1 ? (
             <span style={{ padding: "5px" }}>{`>`}</span>
           ) : (
