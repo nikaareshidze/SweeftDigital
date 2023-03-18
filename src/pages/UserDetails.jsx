@@ -8,7 +8,7 @@ import UserHistory from "../components/UserHistory";
 //import styles
 import Container from "../style/Container";
 
-function UserDatails() {
+function UserDetails() {
   const { userId } = useParams();
 
   return (
@@ -22,4 +22,4 @@ function UserDatails() {
   );
 }
 
-export default UserDatails;
+export default UserDetails;
